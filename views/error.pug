@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  
+  h1 AE API: 
+    p This page does not exist
+
+  h2 Response
+  h2= error.status + ': ' + message 
+
+  if true
+    pre #{error.stack} 
