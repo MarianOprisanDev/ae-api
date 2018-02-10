@@ -2,8 +2,22 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/add-user', function(req, res, next) {
-    res.render('add-user', { title: 'Add User'});
+router.get('/', function(req, res, next) {
+    let users = [
+        {
+            name: 'admin',
+            email: 'admin@api.com'
+        },
+        {
+            name: 'user',
+            email: 'user@api.com'
+        }
+    ];
+
+    res.render('add-user', { 
+        title: 'Add User',
+        users: users
+    });
 });
 
 module.exports = router; 

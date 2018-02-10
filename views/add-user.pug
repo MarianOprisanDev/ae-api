@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Add New User 
+
+  h2 User List
+  ul
+    each user, i in users
+      li= user.name
