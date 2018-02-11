@@ -5,11 +5,46 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const cors = require('cors');
+
+const mongoose = require('mongoose');
+
+
+mongoose.connect('mongodb://localhost/aeapi');
+let db = mongoose.connection;
+
+// check db connection
+db.once('open', function() {
+  console.log('Connected to MongoDB');
+});
+
+// check for db errors
+db.on('error', function(err, next) {
+  if(err) {
+    console.log(error);
+    next();
+  }
+});
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var addUser = require('./routes/add-user');
+var user = require('./routes/user');
+var editUser = require('./routes/edit-user');
+
+var customers = require('./routes/customers');
+var addCustomer = require('./routes/add-customer');
+var customer = require('./routes/customer');
+var editCustomer = require('./routes/edit-customer');
+
+// API
+var getCustomers = require('./routes/get-customers');
 
 var app = express();
+
+// bring in models
+let User = require('./models/user');
+let Customer = require('./models/customer');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +61,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/add-user', addUser);
+app.use('/user/', user);
+app.use('/edit-user', editUser);
+
+app.use('/customers', customers);
+app.use('/add-customer', addCustomer);
+app.use('/customer', customer);
+app.use('/edit-customer', editCustomer);
+
+// API
+app.use('/get-customers', getCustomers);
+
+// enable cors
+// app.use(cors());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

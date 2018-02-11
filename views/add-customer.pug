@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  
+  .container
+    h1= title
+    
+    .card
+      .card-content
+        .card-title Add New Customer
+        
+        form(method="POST", action="/add-customer")
+          .input-field
+            input(name="code", type="text")
+            label(for="code") Customer Code
+          .input-field
+            input(name="city", type="text")
+            label(for="city") City
+          .input-field
+            input(name="name", type="text")
+            label(for="name") Customer Name
+          .input-field
+            input(name="machine_name", type="text")
+            label(for="machine_name") Machine Model
+          .input-field
+            input(name="machine_serial_number", type="text")
+            label(for="machine_serial_number") Serial Number
+          .input-field
+            input(name="total_instalments", type="number")
+            label(for="total_instalments") Total Instaments
+          .input-field
+            input(name="next_instalment", type="number")
+            label(for="next_instalment") Next Instament
+          .input-field
+            input(name="rent", type="number")
+            label(for="rent") Rent
+          .input-field
+            input(name="week", type="number")
+            label(for="week") Invoicing Week
+          .input-field
+            input(name="min_charge", type="text")
+            label(for="min_charge") Min. Charge
+          .input-field
+            input(name="printfleet", type="text")
+            label(for="printfleet") Printfleet
+          .input-field
+            input(name="contact_details", type="text")
+            label(for="contact_details") Contact Details
+          .input-field
+            input(name="observations", type="text")
+            label(for="observations") Observations
+          input.btn.btn-primary(type="submit", value="Add Customer")

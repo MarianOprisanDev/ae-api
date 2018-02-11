@@ -1,10 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Add New User 
-
-  h2 User List
-  ul
-    each user, i in users
-      li= user.name
+  
+  .container
+    h1= title
+    
+    .card
+      .card-content
+        .card-title Add New User 
+        
+        form(method="POST", action="/add-user")
+          .input-field
+            input(name="name", type="text")
+            label(for="name") Name
+          .input-field
+            input(name="email", type="text")
+            label(for="email") Email
+          input.btn.btn-primary(type="submit", value="Add")

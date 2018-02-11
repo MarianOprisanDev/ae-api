@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  
+  .container    
+    h3 User details
+    .card
+      .card-content
+        .card-title #{user.name}
+        h5= user.email
+      
+    .card-action
+        a.btn.btn-primary.amber(href="/edit-user/" + user._id) Edit User
+        a.btn.btn-primary.red.delete-user(href="", data-id=user._id) Delete User
+        //- form(method="POST", action="/add-user")
+        //-   .input-field
+        //-     input(name="name", type="text")
+        //-     label(for="name") Name
+        //-   .input-field
+        //-     input(name="email", type="text")
+        //-     label(for="email") Email
+        //-   input.btn.btn-primary(type="submit", value="Add")

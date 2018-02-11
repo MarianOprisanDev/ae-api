@@ -1,0 +1,26 @@
+body, html {
+    height: 100%;
+}
+
+.content {
+    min-height: 100%;
+    padding-bottom: 70px;
+}
+
+.page-footer {
+    height: 70px;
+    margin-top: -70px;
+}
+
+.customer-city {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.customer-name {
+    margin-left: 20px;
+}
+
+.go-to-top {
+    margin: 0 auto;
+}

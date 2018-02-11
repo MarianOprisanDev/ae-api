@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  
+  .container
+    h1= title
+    
+    .card
+      .card-content
+        .card-title Edit User #{ user.name }
+        
+        form(method="POST", action="/edit-user/" + user._id)
+          .input-field
+            input(name="name", type="text" value=user.name)
+            label(for="name") Name
+          .input-field
+            input(name="email", type="text" value=user.email)
+            label(for="email") Email
+          input.btn.btn-primary(type="submit", value="Submit Changes")

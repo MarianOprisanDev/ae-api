@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  
+  .container
+    h1= title
+    
+    .card
+      .card-content
+        .card-title Edit Customer #{ customer.name }
+        
+        form(method="POST", action="/edit-customer/" + customer._id)
+          .input-field
+            input(name="code", type="text" value= customer.code)
+            label(for="code") Customer Code
+          .input-field
+            input(name="city", type="text" value= customer.city required)
+            label(for="city") City
+          .input-field
+            input(name="name", type="text" value= customer.name required)
+            label(for="name") Customer Name
+          .input-field
+            input(name="machine_name", type="text" value= customer.machine_name required)
+            label(for="machine_name") Machine Model
+          .input-field
+            input(name="machine_serial_number", type="text" value= customer.machine_serial_number required)
+            label(for="machine_serial_number") Serial Number
+          .input-field
+            input(name="total_instalments", type="number" value= customer.total_instalments)
+            label(for="total_instalments") Total Instaments
+          .input-field
+            input(name="next_instalment", type="number" value= customer.next_instalment)
+            label(for="next_instalment") Next Instament
+          .input-field
+            input(name="rent", type="number" value= customer.rent)
+            label(for="rent") Rent
+          .input-field
+            input(name="week", type="number" value= customer.week)
+            label(for="week") Invoicing Week
+          .input-field
+            input(name="min_charge", type="number" value= customer.min_charge)
+            label(for="min_charge") Min. Charge
+          .input-field
+            input(name="printfleet", type="text" value= customer.printfleet)
+            label(for="printfleet") Printfleet
+          .input-field
+            input(name="contact_details", type="text" value= customer.contact_details)
+            label(for="contact_details") Contact Details
+          .input-field
+            input(name="observations", type="text" value= customer.observations)
+            label(for="observations") Observations
+          input.btn.btn-primary(type="submit", value="Submit Changes")
+            
