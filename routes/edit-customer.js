@@ -26,20 +26,19 @@ router.get('/:id', function(req, res, next) {
 router.post('/:id', function(req, res, next){
   let customer = {};
   
-  if (req.body.code) {
-    customer.code = req.body.code;
-  }
+  customer.code = req.body.code;
   customer.city = req.body.city;
   customer.name = req.body.name;
   customer.machine_name = req.body.machine_name;
   customer.machine_serial_number = req.body.machine_serial_number;
-  if(req.body.leasing) {
-    customer.leasing = true;
-  }
+  customer.bw_rate = req.body.bw_rate;
+  customer.clr_rate = req.body.clr_rate;
+  customer.total_instalments = req.body.total_instalments;
+  customer.next_instalment = req.body.next_instalment;
+  customer.rent = req.body.rent;
+  customer.week = req.body.week;
   customer.min_charge = req.body.min_charge;
-  if (req.body.printfleet) {
-    customer.printfleet = req.body.printfleet;
-  }
+  customer.printfleet = req.body.printfleet;
   customer.contact_details = req.body.contact_details;
   customer.observations = req.body.observations;
 

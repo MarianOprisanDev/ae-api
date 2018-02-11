@@ -9,9 +9,9 @@ block content
         .card-title #{customer.name}
         h5= customer.code
         h5= customer.city
-        h5= customer.name
-        h5= customer.machine
+        h5= customer.machine_name
         h5= customer.machine_serial_number
+        h5 Rates: B/W: #{customer.bw_rate} / CLR: #{customer.clr_rate}
         h5= customer.observations
 
       

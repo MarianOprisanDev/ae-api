@@ -14,17 +14,23 @@ block content
             input(name="code", type="text")
             label(for="code") Customer Code
           .input-field
-            input(name="city", type="text")
+            input(name="city", type="text" required)
             label(for="city") City
           .input-field
-            input(name="name", type="text")
+            input(name="name", type="text" required)
             label(for="name") Customer Name
           .input-field
-            input(name="machine_name", type="text")
+            input(name="machine_name", type="text" required)
             label(for="machine_name") Machine Model
           .input-field
-            input(name="machine_serial_number", type="text")
+            input(name="machine_serial_number", type="text" required)
             label(for="machine_serial_number") Serial Number
+          .input-field
+            input(name="bw_rate", type="number",d step="any" required)
+            label(for="bw_rate") BW Rate
+          .input-field
+            input(name="clr_rate", type="number", step="any" required)
+            label(for="clr_rate") CLR Rate
           .input-field
             input(name="total_instalments", type="number")
             label(for="total_instalments") Total Instaments
@@ -32,13 +38,13 @@ block content
             input(name="next_instalment", type="number")
             label(for="next_instalment") Next Instament
           .input-field
-            input(name="rent", type="number")
+            input(name="rent", type="number", step="any")
             label(for="rent") Rent
           .input-field
-            input(name="week", type="number")
+            input(name="week", type="number" required)
             label(for="week") Invoicing Week
           .input-field
-            input(name="min_charge", type="text")
+            input(name="min_charge", type="number", step="any")
             label(for="min_charge") Min. Charge
           .input-field
             input(name="printfleet", type="text")

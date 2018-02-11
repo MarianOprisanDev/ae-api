@@ -26,6 +26,8 @@ router.post('/', function(req, res, next){
     customer.name = req.body.name;
     customer.machine_name = req.body.machine_name;
     customer.machine_serial_number = req.body.machine_serial_number;
+    customer.bw_rate = req.body.bw_rate;
+    customer.clr_rate = req.body.clr_rate;
     customer.total_instalments = req.body.total_instalments;
     customer.next_instalment = req.body.next_instalment;
     customer.rent = req.body.rent;

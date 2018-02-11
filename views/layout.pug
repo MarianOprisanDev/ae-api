@@ -6,7 +6,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/bower_components/materialize/dist/css/materialize.min.css')
     
-  body
+  body#top
     nav.teal
       .container
         .nav-wrapper
@@ -16,15 +16,14 @@ html
                 a(href='/customers') Customers
             li
               a(href='/users') Users
-    .content#top
+    .content
       block content
 
     footer.page-footer.teal
       .footer-copyright
         .container
           | © 2018
-          a.grey-text.text-lighten-4.go-to-top(href='#top') Go To Top
-          a.grey-text.text-lighten-4.right(href='#!') About
+          a.grey-text.text-lighten-4.right(href='#top') Go To Top
 
 
 

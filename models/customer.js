@@ -6,6 +6,8 @@ let customerSchema = mongoose.Schema({
     name: { type: String, required: true },
     machine_name: { type: String, required: true },
     machine_serial_number: { type: String, required: true },
+    bw_rate: { type: Number, required: true },
+    clr_rate: { type: Number, required: true },
     call_history: [
         {
             date: Date,
