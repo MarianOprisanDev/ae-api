@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .card
+        .card-content
+            .card-action
+                    a.right(href='/add-call') Add Call
+    .container
+        each call, i in calls
+            .card
+                .card-content
+                    h5 Date: #{ call.date }
+                    h5 City: #{ call.city }
+                    h5 Customer: #{ call.customer }
+                    h5 Machine: #{ call.machine }
+                    h5 Rates: B/W: #{ call.bw_rate }, CLR: #{ call.clr_rate }
+                    h5 Last Count: B/W: #{ call.bw_count }, CLR: #{ call.clr_count }
+                    h5 Last Call Issued on: #{ call.date_last }
+                    h5 Min. Charge: #{ call.min_charge }
+                    h5 Call Issued By: #{ call.user }
+                    h5 Is Active:  #{ call.active }
+                    hr
+                    p= call.call_text

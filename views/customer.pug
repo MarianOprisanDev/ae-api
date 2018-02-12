@@ -1,20 +1,78 @@
 extends layout
 
 block content
-  
+  W
   .container    
     h3 Customer details
     .card
       .card-content
         .card-title #{customer.name}
-        h5= customer.code
-        h5= customer.city
-        h5= customer.machine_name
-        h5= customer.machine_serial_number
-        h5 Rates: B/W: #{customer.bw_rate} / CLR: #{customer.clr_rate}
-        h5= customer.observations
+        table
+          tbody
+            tr
+              td Customer code:
+              td 
+                h5= customer.code
+            tr
+              td Customer City:
+              td
+                h5= customer.city
+            tr
+              td Machine Model
+              td
+                h5= customer.machine_name
+            tr
+              td Machine S/N:
+              td      
+                h5= customer.machine_serial_number
+            tr
+              td Rates:
+              td
+                h5 Rates: B/W: #{customer.bw_rate} / CLR: #{customer.clr_rate}
+            tr
+              td Observations:
+              td    
+                h5= customer.observations
+            tr
+              td Last Call:
+              td
+                h5= customer.last_call
+            tr
+              td Total Instalments:
+              tf
+                h5= customer.total_instalments
+            tr
+              td Next Instalment
+              td
+                h5= customer.next_instalment
+            tr
+              td Rent:
+              td 
+                h5= customer.rent
+            tr
+              td Week:
+              td
+                h5= customer.week
+            tr
+              td Min. Charge:
+              td
+                h5= customer.min_charge
+            tr
+              td Print Fleet:
+              td  
+                h5= customer.printfleet
+            tr
+              td Contact Details:
+              td
+                h5= customer.contact_details
 
-      
+        h5 Call History:
+          each call, i in customer.call_history
+            p= call.date
+            p= call.user
+            p= call.body
+            hr
+
     .card-action
         a.btn.btn-primary.amber(href="/edit-customer/" + customer._id) Edit Customer
         a.btn.btn-primary.red.delete-customer.right(href="", data-id=customer._id) Delete Customer

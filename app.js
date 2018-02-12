@@ -1,14 +1,15 @@
 var express = require('express');
 var path = require('path');
+
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 const cors = require('cors');
 
 const mongoose = require('mongoose');
-
 
 mongoose.connect('mongodb://localhost/aeapi');
 let db = mongoose.connection;
@@ -27,6 +28,7 @@ db.on('error', function(err, next) {
 });
 
 var index = require('./routes/index');
+
 var users = require('./routes/users');
 var addUser = require('./routes/add-user');
 var user = require('./routes/user');
@@ -37,14 +39,19 @@ var addCustomer = require('./routes/add-customer');
 var customer = require('./routes/customer');
 var editCustomer = require('./routes/edit-customer');
 
+var calls = require('./routes/calls');
+var addCall = require('./routes/add-call');
+
 // API
 var getCustomers = require('./routes/get-customers');
+var getCalls = require('./routes/get-calls');
 
 var app = express();
 
 // bring in models
 let User = require('./models/user');
 let Customer = require('./models/customer');
+let Call = require('./models/call');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -69,8 +76,12 @@ app.use('/add-customer', addCustomer);
 app.use('/customer', customer);
 app.use('/edit-customer', editCustomer);
 
+app.use('/calls', calls);
+app.use('/add-call', addCall);
+
 // API
 app.use('/get-customers', getCustomers);
+app.use('/get-calls', getCalls);
 
 // enable cors
 // app.use(cors());

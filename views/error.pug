@@ -2,11 +2,16 @@ extends layout
 
 block content
   
-  h1 AE API: 
-    p This page does not exist
+  .container
+    .card
+      .card-content
+        .card-title
+          h3 AE API: 
+        .card-content
+          p This page does not exist
 
-  h2 Response
-  h2= error.status + ': ' + message 
+          h5 Response
+          h5= error.status + ': ' + message 
 
-  if true
-    pre #{error.stack} 
+          if true
+            pre #{error.stack} 

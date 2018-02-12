@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  
+  .container
+    h1= title
+    
+    .card
+      .card-content
+        .card-title Add Call Manually
+        
+        form(method="POST", action="/add-call")
+          .input-field
+            input(name="date", type="date")
+            label(for="date")
+          .input-field
+            input(name="city", type="text")
+            label(for="city") City
+          .input-field
+            input(name="customer", type="text")
+            label(for="customer") Customer
+          .input-field
+            input(name="machine", type="text")
+            label(for="machine") Machine
+          .input-field
+            input(name="machine_serial_number", type="text")
+            label(for="machine_serial_number") Machine S/N:
+          .input-field
+            input(name="bw_rate", type="number", step="any")
+            label(for="bw_rate") B/W Rate
+          .input-field
+            input(name="clr_rate", type="number", step="any")
+            label(for="clr_rate") CLR Rate
+          .input-field
+            input(name="bw_count", type="number", step="any")
+            label(for="bw_count") B/W Count
+          .input-field
+            input(name="clr_count", type="number", step="any")
+            label(for="clr_count") CLR Count
+          .input-field
+            input(name="date_last", type="date")
+            label(for="date_last") Last Invoice Date
+          .input-field
+            input(name="min_charge", type="number", step="any")
+            label(for="min_charge") Min. Charge
+          .input-field
+            input(name="user", type="text")
+            label(for="user") User
+          .input-field
+            input(name="call_text", type="text")
+            label(for="call_text") 
+          input.btn.btn-primary(type="submit", value="Add")
